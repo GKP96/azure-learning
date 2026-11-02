@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: keyvault
+
+  cloud:
+    azure:
+      storage: 
+        enabled: false
+      keyvault:
+        secret:
+          property-sources:
+          - endpoint: https://kv-gaupra.vault.azure.net/
+            secret-keys:
+            - my-kv-name
+
+custom:
+  config:
+    name: Gautam
+    keyvault: ${my-kv-name}
