@@ -4,16 +4,23 @@ spring:
 
   cloud:
     azure:
-      storage: 
+      storage:
         enabled: false
+        blob:
+          account-name: gaupra
       keyvault:
         secret:
           property-sources:
-          - endpoint: https://kv-gaupra.vault.azure.net/
-            secret-keys:
-            - my-kv-name
+            - endpoint: https://kv-gaupra.vault.azure.net/
+              secret-keys:
+                - my-kv-name
 
 custom:
   config:
     name: Gautam
     keyvault: ${my-kv-name}
+
+azure:
+  storage:
+    connection-string: "commented the connection string"
+    container-name: gkp
